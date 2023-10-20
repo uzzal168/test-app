@@ -12,7 +12,7 @@ import { useAuth } from "@/context/AuthContext";
 
 const AuthSignin = () => {
   const { user, login, isAuthenticated } = useAuth();
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
@@ -21,7 +21,7 @@ const AuthSignin = () => {
 
     topProgress.show();
     AuthService.signin({
-      username: username,
+      username: email,
       password: password,
       app: 2,
     })
@@ -40,7 +40,7 @@ const AuthSignin = () => {
         topProgress.hide();
       });
 
-    setUsername("");
+    setEmail("");
     setPassword("");
   };
 
@@ -58,16 +58,16 @@ const AuthSignin = () => {
 
         <div className="form-floating mb-3">
           <input
-            type="text"
+            type="email"
             className={`form-control`}
             id="floatingInput"
             autoFocus={false}
-            placeholder="Username"
+            placeholder="Email Address"
             required
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
-          <label htmlFor="floatingInput">Username</label>
+          <label htmlFor="floatingInput">Email Address</label>
         </div>
         <div className="form-floating mb-3">
           <input
@@ -85,7 +85,7 @@ const AuthSignin = () => {
         <button
           className="btn btn-primary w-100 py-2"
           type="submit"
-          disabled={username && password ? false : true}
+          disabled={email && password ? false : true}
         >
           Sign in
         </button>
