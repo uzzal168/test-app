@@ -21,7 +21,7 @@ const NavBar = () => {
     <nav className="navbar bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" href="/">
-          Navbar
+          TestApp
         </Link>
         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
           <li className="nav-item">
