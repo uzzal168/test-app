@@ -1,0 +1,32 @@
+.image-carousel {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-image {
+  flex: 1;
+  text-align: center;
+  height: 400px;
+  width: 100%;
+}
+
+.carousel-image img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.prev-button,
+.next-button {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+}
+
+@media screen and (max-width: 500px) {
+  .carousel-image {
+    height: 200px;
+  }
+}
